@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Slideshow from "@/views/Slideshow.vue";
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.VITE_APP_BASE_PATH),
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
