@@ -1,12 +1,13 @@
 <template>
-  <Slider :slides="slides">
-    <WelcomeSlide @slide="getSlide" />
-    <IntroductionSlide @slide="getSlide" :creators="creators" heading="Introduction" />
-    <WelcomeSlide @slide="getSlide" />
-    <IntroductionSlide @slide="getSlide" :creators="creators" heading="Introduction" />
-    <WelcomeSlide @slide="getSlide" />
-    <IntroductionSlide @slide="getSlide" :creators="creators" heading="Introduction" />
-  </Slider>
+  <h1>test</h1>
+<!--  <Slider :slides="slides">-->
+<!--    <WelcomeSlide @slide="getSlide" />-->
+<!--    <IntroductionSlide @slide="getSlide" :creators="creators" heading="Introduction" />-->
+<!--    <WelcomeSlide @slide="getSlide" />-->
+<!--    <IntroductionSlide @slide="getSlide" :creators="creators" heading="Introduction" />-->
+<!--    <WelcomeSlide @slide="getSlide" />-->
+<!--    <IntroductionSlide @slide="getSlide" :creators="creators" heading="Introduction" />-->
+<!--  </Slider>-->
 </template>
 
 <script>
