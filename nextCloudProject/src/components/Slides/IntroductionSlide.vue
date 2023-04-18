@@ -1,8 +1,8 @@
 <template>
-  <section ref="slide" class="slide basis-[100vw]">
+  <section ref="slide" class="slide shrink-0 h-full basis-[100vw]">
     <h2>{{ heading }}</h2>
     <section v-if="creators.length > 0">
-      <div class="flex items-center" v-for="creator in creators">
+      <div class="flex items-center" v-for="(creator, index) in creators" :key="`creator${index}`">
         <figure class="h-48 w-80">
           <img class="h-full w-full object-cover" :src="`./images/${creator.img}.jpeg`" :alt="creator.name">
         </figure>
