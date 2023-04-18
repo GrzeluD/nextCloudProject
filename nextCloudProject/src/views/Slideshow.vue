@@ -1,5 +1,4 @@
 <template>
-  <h1>test</h1>
   <Slider :slides="slides">
     <WelcomeSlide @slide="getSlide" />
     <IntroductionSlide @slide="getSlide" :creators="creators" heading="Introduction" />
