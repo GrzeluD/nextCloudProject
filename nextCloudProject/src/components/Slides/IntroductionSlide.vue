@@ -4,7 +4,7 @@
       <h2 class="text-3xl mb-8 font-[Sharetech] uppercase">{{ heading }}</h2>
       <section v-if="creators.length > 0">
         <div class="creator flex items-center" v-for="(creator, index) in creators" :key="`creator${index}`">
-          <figure class="creator__img h-32 w-80 before:z-index-1 before:content-[''] before:opacity-50 relative before:top-0 before:bottom-0 before:left-0 before:right-0 before:absolute" :class="index % 2 !== 0 ? 'order-1' : ''">
+          <figure class="creator__img h-32 w-80 before:z-10 before:z-index-1 before:content-[''] before:opacity-50 relative before:top-0 before:bottom-0 before:left-0 before:right-0 before:absolute" :class="index % 2 !== 0 ? 'order-1' : ''">
             <img class="h-full w-full object-cover grayscale" :src="`/project/images/${creator.img}.jpeg`" :alt="creator.name">
           </figure>
           <div class="px-4 w-80">
