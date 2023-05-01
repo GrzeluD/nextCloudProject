@@ -8,7 +8,10 @@ module.exports = {
     extend: {
       colors: {
         'indigo': '#002845',
-        'indigo-dark': '#020024'
+        'indigo-dark': '#020024',
+        'cyan': '#00cfcc',
+        'pink': '#e898ac',
+        'orange': '#ff9973'
       }
     },
   },

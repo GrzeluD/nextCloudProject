@@ -24,8 +24,21 @@ export default {
     return {
       creators: [
         {
-          name: "Grzegorz Dziedzic",
+          firstName: "Grzegorz",
+          lastName: "Dziedzic",
           description: "Front-end Developer, Creator of this page",
+          img: "img"
+        },
+        {
+          firstName: "Paweł",
+          lastName: "Mielimonka",
+          description: "Linux Administrator, Owner of Kartofel",
+          img: "img"
+        },
+        {
+          firstName: "Albert",
+          lastName: "Pasek",
+          description: "Businessman and Junk researcher",
           img: "img"
         }
       ],

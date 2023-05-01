@@ -1,6 +1,6 @@
 <template>
-  <section ref="slide" class="slide shrink-0 h-full basis-[100vw]">
-    <h2>Bezpieczna chmura</h2>
+  <section ref="slide" class="slide shrink-0 h-full basis-[100vw] items-center justify-center flex">
+    <h2 class="text-4xl font-[Sharetech] uppercase">Welcome to the <span class="text-cyan">cyber cloud</span></h2>
   </section>
 </template>
 
