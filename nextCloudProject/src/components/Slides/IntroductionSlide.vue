@@ -1,11 +1,11 @@
 <template>
-  <section ref="slide" class="slide shrink-0 h-full basis-[100vw] pt-8">
+  <section ref="slide" class="slide shrink-0 h-full basis-[100vw] pt-8 relative">
     <div class="container w-[640px] mx-auto">
       <h2 class="text-3xl mb-8 font-[Sharetech] uppercase">{{ heading }}</h2>
       <section v-if="creators.length > 0">
         <div class="creator flex items-center" v-for="(creator, index) in creators" :key="`creator${index}`">
           <figure class="creator__img h-32 w-80 before:z-10 before:z-index-1 before:content-[''] before:opacity-50 relative before:top-0 before:bottom-0 before:left-0 before:right-0 before:absolute" :class="index % 2 !== 0 ? 'order-1' : ''">
-            <img class="h-full w-full object-cover grayscale" :src="`/project/images/${creator.img}.jpeg`" :alt="creator.name">
+            <img class="h-full w-full object-cover grayscale" :src="`${path}/images/${creator.img}.jpeg`" :alt="creator.name">
           </figure>
           <div class="px-4 w-80">
             <h2 class="font-[Sharetech] text-2xl">{{ creator.firstName }} <span class="text-cyan">{{ creator.lastName }}</span></h2>
@@ -14,18 +14,37 @@
         </div>
       </section>
     </div>
+    <BackgroundFigures :figures="figures" />
   </section>
 </template>
 
 <script>
+import BackgroundFigures from "@/components/BackgroundFigures.vue";
 export default {
   name: "IntroductionSlide",
+  components: {BackgroundFigures},
   props: {
     creators: {
       type: Array,
     },
     heading: {
       type: String,
+    }
+  },
+  data() {
+    return {
+      path: import.meta.env.PROD ? '/project' : '',
+      figures: [
+        {
+          type: 'emptySquare',
+          width: '50px',
+          height: '50px',
+          background: 'transparent',
+          border: '1px solid #fff',
+          positionX: '20px',
+          positionY: '20px'
+        },
+      ],
     }
   },
   mounted() {

@@ -2,10 +2,6 @@
   <Slider :slides="slides">
     <WelcomeSlide @slide="getSlide" />
     <IntroductionSlide @slide="getSlide" :creators="creators" heading="Introduction" />
-    <WelcomeSlide @slide="getSlide" />
-    <IntroductionSlide @slide="getSlide" :creators="creators" heading="Introduction" />
-    <WelcomeSlide @slide="getSlide" />
-    <IntroductionSlide @slide="getSlide" :creators="creators" heading="Introduction" />
   </Slider>
 </template>
 
