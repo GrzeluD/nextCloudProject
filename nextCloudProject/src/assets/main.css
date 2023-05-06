@@ -376,3 +376,75 @@ template {
     font-family: "Sharetech";
     src: url("./fonts/sharetech.woff2") format("woff2");
 }
+
+@keyframes squareSpinRight {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(5px, 0) rotate(90deg);
+    }
+    50% {
+        transform: translate(5px, 5px) rotate(180deg);
+    }
+    75% {
+        transform: translate(0, 5px) rotate(270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(359deg);
+    }
+}
+
+@keyframes squareSpinLeft {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(5px, 0) rotate(-90deg);
+    }
+    50% {
+        transform: translate(5px, 5px) rotate(-180deg);
+    }
+    75% {
+        transform: translate(0, 5px) rotate(-270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(-359deg);
+    }
+}
+
+@keyframes squareNegativeSpinLeft {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-5px, 0) rotate(-90deg);
+    }
+    50% {
+        transform: translate(-5px, -5px) rotate(-180deg);
+    }
+    75% {
+        transform: translate(0, -5px) rotate(-270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(-359deg);
+    }
+}
+
+@keyframes squareNegativeSpinRight {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-5px, 0) rotate(90deg);
+    }
+    50% {
+        transform: translate(-5px, -5px) rotate(180deg);
+    }
+    75% {
+        transform: translate(0, -5px) rotate(270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(359deg);
+    }
+}
