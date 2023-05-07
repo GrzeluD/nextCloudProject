@@ -2,6 +2,7 @@
   <Slider :slides="slides">
     <WelcomeSlide @slide="getSlide" />
     <IntroductionSlide @slide="getSlide" :creators="creators" heading="Introduction" />
+    <NextStepsSlide @slide="getSlide" />
   </Slider>
 </template>
 
@@ -9,11 +10,13 @@
 import Slider from "@/components/Slider.vue";
 import WelcomeSlide from "@/components/Slides/WelcomeSlide.vue";
 import IntroductionSlide from "@/components/Slides/IntroductionSlide.vue";
+import NextStepsSlide from "@/components/Slides/NextStepsSlide.vue";
 export default {
   name: "Slideshow",
   components: {
     IntroductionSlide,
     Slider,
+    NextStepsSlide,
     WelcomeSlide
   },
   data() {
