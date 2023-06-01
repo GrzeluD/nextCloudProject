@@ -5,21 +5,21 @@
       <ul class="flex justify-between">
         <li class="block w-[180px]">
           <div class="bg-cyan w-[100px] h-[90px] relative mb-4 before:block before:absolute before:left-[-8px] before:w-[8px] before:top-[40px] before:h-[80px] before:border before:border-[#ffffff90] before:border-r-0">
-            <FirewallIcon class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+            <FirewallIcon color="white" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
           </div>
-          <h3 class="pl-1 before:block before:mb-2 before:text-3xl before:text-cyan before:content-['01'] text-xl font-[Sharetech] uppercase">IpTables</h3>
+          <h3 class="pl-1 before:block before:mb-2 before:text-3xl before:text-cyan before:content-['01'] text-xl font-[Sharetech] uppercase">Firewall</h3>
           <h4 class="pl-1">Allow you to configure network traffic filtering rules and server protection</h4>
         </li>
         <li class="block w-[180px]">
           <div class="bg-pink w-[100px] h-[90px] relative mb-4 before:block before:absolute before:left-[-8px] before:w-[8px] before:top-[40px] before:h-[80px] before:border before:border-[#ffffff90] before:border-r-0">
-            <Fail2BanIcon class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+            <Fail2BanIcon color="white" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
           </div>
           <h3 class="pl-1 before:block before:mb-2 before:text-3xl before:text-cyan before:content-['01'] text-xl font-[Sharetech] uppercase">Fail2Ban</h3>
           <h4 class="pl1">Monitors system logs and blocks IP addresses of attackers</h4>
         </li>
         <li class="block w-[180px]">
           <div class="bg-orange w-[100px] h-[90px] relative mb-4 before:block before:absolute before:left-[-8px] before:w-[8px] before:top-[40px] before:h-[80px] before:border before:border-[#ffffff90] before:border-r-0">
-            <SslIcon class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+            <SslIcon color="white" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
           </div>
           <h3 class="pl-1 before:block before:mb-2 before:text-3xl before:text-cyan before:content-['01'] text-xl font-[Sharetech] uppercase">SSL/TLS</h3>
           <h4 class="pl-1">Cryptographic protocols used to secure internet communications</h4>

@@ -5,6 +5,7 @@
     <LineSlide @slide="getSlide" heading="Next Cloud" :lineList="lineList" />
     <ListSlide @slide="getSlide" :list="featureList" heading="Features" />
     <ListSlide @slide="getSlide" heading="Installation" :list="installationList" />
+    <TitleSlide @slide="getSlide" title="Hardware" number="01" color="cyan" />
     <NextStepsSlide @slide="getSlide" />
   </Slider>
 </template>
@@ -15,6 +16,7 @@ import ListSlide from "@/components/Slides/ListSlide.vue";
 import LineSlide from "@/components/LineSlide.vue";
 import NextStepsSlide from "@/components/Slides/NextStepsSlide.vue";
 import Slider from "@/components/Slider.vue";
+import TitleSlide from "@/components/Slides/TitleSlide.vue";
 import WelcomeSlide from "@/components/Slides/WelcomeSlide.vue";
 export default {
   name: "Slideshow",
@@ -24,6 +26,7 @@ export default {
     IntroductionSlide,
     Slider,
     NextStepsSlide,
+    TitleSlide,
     WelcomeSlide
   },
   data() {
