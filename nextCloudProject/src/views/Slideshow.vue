@@ -10,17 +10,27 @@
     <PhotoSlide @slide="getSlide" heading="Our solution" photoDetails="ourSolution" />
     <ListSlide2 @slide="getSlide" heading="Base system" :list="secondList" :anchor="secondListAnchor" />
     <TableSlide @slide="getSlide" heading="Download Server" />
+    <ContentSlide @slide="getSlide" heading="Deployment" />
+    <ContentSlide2 @slide="getSlide" heading="Deployment" />
+    <ContentSlide3 @slide="getSlide" heading="Deployment" />
+    <PhotoSlide2 @slide="getSlide" heading="Configure webserver" />
+    <ContentSlide4 @slide="getSlide" heading="Configure NextCloud" />
     <NextStepsSlide @slide="getSlide" :stepsList="nextSteps" headingFirst="Next steps" headingSecond="for safety" />
   </Slider>
 </template>
 
 <script>
+import ContentSlide from "@/components/Slides/ContentSlide.vue";
+import ContentSlide2 from "@/components/Slides/ContentSlide2.vue";
+import ContentSlide3 from "@/components/Slides/ContentSlide3.vue";
+import ContentSlide4 from "@/components/Slides/ContentSlide4.vue";
 import IntroductionSlide from "@/components/Slides/IntroductionSlide.vue";
 import ListSlide from "@/components/Slides/ListSlide.vue";
 import ListSlide2 from "@/components/Slides/ListSlide2.vue";
 import LineSlide from "@/components/Slides/LineSlide.vue";
 import NextStepsSlide from "@/components/Slides/NextStepsSlide.vue";
 import PhotoSlide from "@/components/Slides/PhotoSlide.vue";
+import PhotoSlide2 from "@/components/Slides/PhotoSlide2.vue";
 import Slider from "@/components/Slider.vue";
 import TableSlide from "@/components/Slides/TableSlide.vue";
 import TitleSlide from "@/components/Slides/TitleSlide.vue";
@@ -28,6 +38,10 @@ import WelcomeSlide from "@/components/Slides/WelcomeSlide.vue";
 export default {
   name: "Slideshow",
   components: {
+    ContentSlide,
+    ContentSlide2,
+    ContentSlide3,
+    ContentSlide4,
     TableSlide,
     LineSlide,
     ListSlide,
@@ -35,6 +49,7 @@ export default {
     IntroductionSlide,
     NextStepsSlide,
     PhotoSlide,
+    PhotoSlide2,
     Slider,
     TitleSlide,
     WelcomeSlide
@@ -77,7 +92,7 @@ export default {
         },
         {
           title: "Install Dependencies",
-          description: "Read manual on <a class='underline italic text-cyan' href='https://docs.nextcloud.com/server/latest/admin_manual/'>here</a> which guides you step-by-step thru installation process",
+          description: "Read manual <a class='underline italic text-cyan' href='https://docs.nextcloud.com/server/latest/admin_manual/'>here</a> which guides you step-by-step thru installation process",
           color: "orange",
           icon: "Terminal"
         },
@@ -166,7 +181,7 @@ export default {
         },
         {
           title: "Dedicated home server",
-          content: "Even the cheapest guarantee sufficient resources to run clod with multiple apps and plugins, and there’s still some for another webpages and services",
+          content: "Even the cheapest guarantee sufficient resources to run cloud with multiple apps and plugins, and there’s still some for another webpages and services",
           icon: "Home",
           color: "orange"
         }

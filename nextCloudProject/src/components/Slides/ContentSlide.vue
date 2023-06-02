@@ -1,32 +1,15 @@
 <template>
   <section ref="slide" class="slide flex items-center shrink-0 h-full basis-[100vw] relative">
     <div class="container w-[840px] mx-auto relative">
-        <h2 class="text-3xl font-[Sharetech] uppercase">{{ heading }}</h2>
-        <div>
-          <div class="row flex mb-3">
-            <div class="col basis-1/2"></div>
-            <div class="col basis-1/2 font-[Sharetech]">Tailored for:</div>
-          </div>
-          <div class="mt-4 p-4 border-solid border-2 border-pink rounded-xl">
-            <div class="row flex mb-3 items-center">
-              <div class="col basis-1/2 font-[Sharetech]">All-in-One docker image</div>
-              <div class="col basis-1/2">Container without Virtual Machine, but also Virtual server in clouds (AWS, Azure and other)</div>
-            </div>
-            <div class="row flex mb-3 items-center">
-              <div class="col basis-1/2 font-[Sharetech]">All-in-One VM image</div>
-              <div class="col basis-1/2">Virtual Machines on home PC or as Virtual Server in cloud services</div>
-            </div>
-            <div class="row flex mb-3 items-center">
-              <div class="col basis-1/2 font-[Sharetech]">NextcloudPi image</div>
-              <div class="col basis-1/2">Raspberry PI comlete operating system with Nextcloud solution deployed and ready to run. Also for Odroid and rock64 uPC’s.</div>
-            </div>
-            <div class="row flex mb-3 items-center">
-              <div class="col basis-1/2 font-[Sharetech]">zip/tar Archive (our choice)</div>
-              <div class="col basis-1/2">Most challenging, but also most robust package which can be deployed on anything meeting minimum hardware requirements</div>
-            </div>
-          </div>
-        </div>
-      <a class="block mt-2 underline italic text-cyan font-[Sharetech]" href="https://nextcloud.com/install/#instructions-server">More images and packages</a>
+      <h2 class="text-3xl font-[Sharetech] uppercase mb-4">{{ heading }}</h2>
+      <ol>
+        <li class="font-[Sharetech] text-xl mb-2 text-pink">1. Prerequisites:</li>
+        <p>apt install apache2 clamav-daemon cla mav ffmpeg avconv default-jre default-jdk mysql mysql-common mysqlmail mariadb-server mariadb-client python3 pip samba winbind php8.2 libapache-mod-php8.2 libapache-mod-fcgid php-</p>
+        <p>{fpm,cli,intl,xml,sqlite3,ctype,fileinfo,filter,hash,libxml,oposix,session,zlib,curl,cgi,zip,gd,json,mysql,mbstring,</p>
+        <p>dom,xml,simplexml,bz2,apcu,phar,smbclient,ftp,imap,bcmath,gmp,exifmemcache,redis,imagick,pgsql,pear,xmlrpc}</p>
+        <p class="mt-2"> pip install thefuck</p>
+        <p class="mt-2">echo ‘eval „$(thefuck –alias)”’ > ~/.bashrc</p>
+      </ol>
     </div>
     <BackgroundFigures :figures="figures" />
   </section>
@@ -34,8 +17,9 @@
 
 <script>
 import BackgroundFigures from "@/components/BackgroundFigures.vue";
+
 export default {
-  name: "TableSlide",
+  name: "ContentSlide",
   components: {BackgroundFigures},
   props: {
     heading: {

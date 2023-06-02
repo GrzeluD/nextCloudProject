@@ -1,32 +1,20 @@
 <template>
-  <section ref="slide" class="slide flex items-center shrink-0 h-full basis-[100vw] relative">
-    <div class="container w-[840px] mx-auto relative">
-        <h2 class="text-3xl font-[Sharetech] uppercase">{{ heading }}</h2>
-        <div>
-          <div class="row flex mb-3">
-            <div class="col basis-1/2"></div>
-            <div class="col basis-1/2 font-[Sharetech]">Tailored for:</div>
-          </div>
-          <div class="mt-4 p-4 border-solid border-2 border-pink rounded-xl">
-            <div class="row flex mb-3 items-center">
-              <div class="col basis-1/2 font-[Sharetech]">All-in-One docker image</div>
-              <div class="col basis-1/2">Container without Virtual Machine, but also Virtual server in clouds (AWS, Azure and other)</div>
-            </div>
-            <div class="row flex mb-3 items-center">
-              <div class="col basis-1/2 font-[Sharetech]">All-in-One VM image</div>
-              <div class="col basis-1/2">Virtual Machines on home PC or as Virtual Server in cloud services</div>
-            </div>
-            <div class="row flex mb-3 items-center">
-              <div class="col basis-1/2 font-[Sharetech]">NextcloudPi image</div>
-              <div class="col basis-1/2">Raspberry PI comlete operating system with Nextcloud solution deployed and ready to run. Also for Odroid and rock64 uPC’s.</div>
-            </div>
-            <div class="row flex mb-3 items-center">
-              <div class="col basis-1/2 font-[Sharetech]">zip/tar Archive (our choice)</div>
-              <div class="col basis-1/2">Most challenging, but also most robust package which can be deployed on anything meeting minimum hardware requirements</div>
-            </div>
-          </div>
-        </div>
-      <a class="block mt-2 underline italic text-cyan font-[Sharetech]" href="https://nextcloud.com/install/#instructions-server">More images and packages</a>
+  <section ref="slide" class="slide relative shrink-0 h-full basis-[100vw] items-center flex">
+    <div class="container w-[840px] mx-auto">
+      <h2 class="text-3xl font-[Sharetech] uppercase mb-8">{{ heading }}</h2>
+      <div class="flex items-center justify-between">
+        <ul class="w-[260px]">
+          <li class="pl-3 mb-2 relative before:absolute before:w-[3px] before:h-[3px] before:rounded-full before:bg-cyan before:left-0 before:top-[12px]">nano /etc/apache2/sites-available/nextcloud.conf</li>
+          <li class="pl-3 mb-2 relative before:absolute before:w-[3px] before:h-[3px] before:rounded-full before:bg-cyan before:left-0 before:top-[12px]">#check apache2 documentation for deatils</li>
+          <li class="pl-3 mb-2 relative before:absolute before:w-[3px] before:h-[3px] before:rounded-full before:bg-cyan before:left-0 before:top-[12px]">#minium configuration contains Alias and Directory section (shoter than on picture)</li>
+          <li class="pl-3 mb-2 relative before:absolute before:w-[3px] before:h-[3px] before:rounded-full before:bg-cyan before:left-0 before:top-[12px]">a2dissite 000-default.conf</li>
+          <li class="pl-3 mb-2 relative before:absolute before:w-[3px] before:h-[3px] before:rounded-full before:bg-cyan before:left-0 before:top-[12px]">a2enmod userdir</li>
+          <li class="pl-3 mb-2 relative before:absolute before:w-[3px] before:h-[3px] before:rounded-full before:bg-cyan before:left-0 before:top-[12px]">a2ensite nextcloud.conf</li>
+          <li class="pl-3 mb-2 relative before:absolute before:w-[3px] before:h-[3px] before:rounded-full before:bg-cyan before:left-0 before:top-[12px]">systemctl stop apache2</li>
+          <li class="pl-3 mb-2 relative before:absolute before:w-[3px] before:h-[3px] before:rounded-full before:bg-cyan before:left-0 before:top-[12px]">systemctl enable --now apache2</li>
+        </ul>
+        <img class="w-[460px] rounded-xl border-4 border-cyan border-solid" :src="`${path}/images/conf.png`">
+      </div>
     </div>
     <BackgroundFigures :figures="figures" />
   </section>
@@ -35,15 +23,19 @@
 <script>
 import BackgroundFigures from "@/components/BackgroundFigures.vue";
 export default {
-  name: "TableSlide",
+  name: "PhotoSlide2",
   components: {BackgroundFigures},
   props: {
     heading: {
       type: String
+    },
+    photoDetails: {
+      type: Object
     }
   },
   data() {
     return {
+      path: import.meta.env.PROD ? '/project' : '',
       figures: [
         {
           type: 'emptySquare',

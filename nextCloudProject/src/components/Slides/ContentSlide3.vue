@@ -1,41 +1,41 @@
 <template>
   <section ref="slide" class="slide flex items-center shrink-0 h-full basis-[100vw] relative">
     <div class="container w-[840px] mx-auto relative">
-        <h2 class="text-3xl font-[Sharetech] uppercase">{{ heading }}</h2>
-        <div>
-          <div class="row flex mb-3">
-            <div class="col basis-1/2"></div>
-            <div class="col basis-1/2 font-[Sharetech]">Tailored for:</div>
-          </div>
-          <div class="mt-4 p-4 border-solid border-2 border-pink rounded-xl">
-            <div class="row flex mb-3 items-center">
-              <div class="col basis-1/2 font-[Sharetech]">All-in-One docker image</div>
-              <div class="col basis-1/2">Container without Virtual Machine, but also Virtual server in clouds (AWS, Azure and other)</div>
-            </div>
-            <div class="row flex mb-3 items-center">
-              <div class="col basis-1/2 font-[Sharetech]">All-in-One VM image</div>
-              <div class="col basis-1/2">Virtual Machines on home PC or as Virtual Server in cloud services</div>
-            </div>
-            <div class="row flex mb-3 items-center">
-              <div class="col basis-1/2 font-[Sharetech]">NextcloudPi image</div>
-              <div class="col basis-1/2">Raspberry PI comlete operating system with Nextcloud solution deployed and ready to run. Also for Odroid and rock64 uPC’s.</div>
-            </div>
-            <div class="row flex mb-3 items-center">
-              <div class="col basis-1/2 font-[Sharetech]">zip/tar Archive (our choice)</div>
-              <div class="col basis-1/2">Most challenging, but also most robust package which can be deployed on anything meeting minimum hardware requirements</div>
-            </div>
-          </div>
+      <h2 class="text-3xl font-[Sharetech] uppercase mb-4">{{ heading }}</h2>
+      <h3 class="font-[Sharetech] text-xl mb-2 text-orange">3. Make sure /etc/mysql/my.cnf contains line:</h3>
+      <p class="mb-4">transaction_isolation = READ-COMMITTED</p>
+      <div class="row flex">
+        <div class="col basis-[65%]">
+          <p class="mb-2">Enter MariaDB interface</p>
+          <p class="mb-2">mysql -uroot -p</p>
+          <p class="mb-2">And create database</p>
+          <p class="mb-2">CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';</p>
+          <p class="mb-2">CREATE DATABASE IF NOT EXISTS nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;</p>
+          <p class="mb-2">GRANT ALL PRIVILEGES on nextcloud.* to 'username'@'localhost';</p>
+          <p class="mb-2">FLUSH privileges;</p>
+          <p>quit;</p>
         </div>
-      <a class="block mt-2 underline italic text-cyan font-[Sharetech]" href="https://nextcloud.com/install/#instructions-server">More images and packages</a>
+        <div class="col basis-[30%]">
+          <p>Now set your configuration in config/config.php:</p>
+          <p>"dbtype"        => "mysql",</p>
+          <p>"dbname"        => "nextcloud",</p>
+          <p>"dbuser"        => "username",</p>
+          <p>"dbpassword"    => "password",</p>
+          <p>"dbhost"        => "localhost",</p>
+          <p>"dbtableprefix" => "oc_",</p>
+        </div>
+      </div>
+
     </div>
-    <BackgroundFigures :figures="figures" />
+    <BackgroundFigures :figures="figures"/>
   </section>
 </template>
 
 <script>
 import BackgroundFigures from "@/components/BackgroundFigures.vue";
+
 export default {
-  name: "TableSlide",
+  name: "ContentSlide3",
   components: {BackgroundFigures},
   props: {
     heading: {
