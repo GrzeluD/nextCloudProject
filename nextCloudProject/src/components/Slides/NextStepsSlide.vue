@@ -3,11 +3,11 @@
     <div class="container w-[840px] mx-auto">
       <h2 class="text-3xl font-[Sharetech] uppercase mb-8">{{ headingFirst }} <span class="text-cyan">{{ headingSecond }}</span></h2>
       <ul class="flex justify-between">
-        <li class="stepsList block w-[230px]" v-for="item in stepsList">
+        <li class="stepsList block w-[230px]" v-for="(item, index) in stepsList">
           <div class="icon w-[100px] h-[90px] relative mb-4 before:block before:absolute before:left-[-8px] before:w-[8px] before:top-[40px] before:h-[80px] before:border before:border-[#ffffff90] before:border-r-0">
             <component :is="item.icon + 'Icon'" color="white" class="fill-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
           </div>
-          <h3 class="pl-1 before:block before:mb-2 before:text-3xl before:text-cyan before:content-['01'] text-xl font-[Sharetech] uppercase">{{ item.title }}</h3>
+          <h3 :class="`before:content-['0${index + 1}']`" class="pl-1 before:block before:mb-2 before:text-3xl before:text-cyan text-xl font-[Sharetech] uppercase">{{ item.title }}</h3>
           <h4 class="pl-1">{{ item.content }}</h4>
         </li>
       </ul>
