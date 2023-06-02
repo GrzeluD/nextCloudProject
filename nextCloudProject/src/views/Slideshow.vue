@@ -16,6 +16,8 @@
     <PhotoSlide2 @slide="getSlide" heading="Configure webserver" />
     <ContentSlide4 @slide="getSlide" heading="Configure NextCloud" />
     <NextStepsSlide @slide="getSlide" :stepsList="nextSteps" headingFirst="Next steps" headingSecond="for safety" />
+    <ContentSlide5 @slide="getSlide" heading="Costs and efforts" />
+    <TitleSlide @slide="getSlide" title="Summary" number="END" color="cyan" />
   </Slider>
 </template>
 
@@ -24,6 +26,7 @@ import ContentSlide from "@/components/Slides/ContentSlide.vue";
 import ContentSlide2 from "@/components/Slides/ContentSlide2.vue";
 import ContentSlide3 from "@/components/Slides/ContentSlide3.vue";
 import ContentSlide4 from "@/components/Slides/ContentSlide4.vue";
+import ContentSlide5 from "@/components/Slides/ContentSlide5.vue";
 import IntroductionSlide from "@/components/Slides/IntroductionSlide.vue";
 import ListSlide from "@/components/Slides/ListSlide.vue";
 import ListSlide2 from "@/components/Slides/ListSlide2.vue";
@@ -42,6 +45,7 @@ export default {
     ContentSlide2,
     ContentSlide3,
     ContentSlide4,
+    ContentSlide5,
     TableSlide,
     LineSlide,
     ListSlide,

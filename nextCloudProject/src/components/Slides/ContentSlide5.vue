@@ -1,31 +1,37 @@
 <template>
   <section ref="slide" class="slide flex items-center shrink-0 h-full basis-[100vw] relative">
-    <div :class="'before:bg-' + color" class="container w-[640px] mx-auto h-[160px] relative
-                after:content-[''] after:bottom-0 after:left-0 after:right-0 after:absolute after:h-[12px] after:rounded-xl after:bg-white
-                before:content-[''] before:bottom-0 before:left-0 before:right-[20%] before:absolute before:h-[12px] before:rounded-xl before:z-10">
-      <div class="flex justify-around items-center">
-        <h2 class="text-3xl font-[Sharetech] uppercase">{{ title }}</h2>
-        <div class="font-[Sharetech] w-16 h-16 relative before:w-[1px] before:left-1/2 before:-translate-x-1/2 before:h-[90px] before:absolute before:-bottom-[90px] bg-cyan before:bg-cyan"><span class="text-3xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">{{ number }}</span></div>
+    <div class="container w-[840px] mx-auto relative">
+      <h2 class="text-3xl font-[Sharetech] uppercase mb-4">{{ heading }}</h2>
+      <div class="row flex justify-between">
+        <div class="col basis-[48%]">
+          <h3 class="font-[Sharetech] text-xl mb-2 text-cyan">Scope of work:</h3>
+          <p>Base OS and configuration - 1h</p>
+          <p>DNS and Pi-hole - 1h</p>
+          <p>Prerequisites - 1h</p>
+          <p>NextCloud and configuration - 2h</p>
+          <p>Basic security - 4h</p>
+        </div>
+        <div class="col basis-[48%]">
+          <h3 class="font-[Sharetech] text-xl mb-2 text-pink">The costs required to start include:</h3>
+          <p class="mb-2"> A used Fujitsu mini PC, which cost 420 PLN.</p>
+          <p class="mb-2">A disk enclosure, which cost 70 PLN.</p>
+          <p class="mb-2">A hard drive, which can cost from 150/300 PLN.</p>
+        </div>
       </div>
+
     </div>
-    <BackgroundFigures :figures="figures" />
+    <BackgroundFigures :figures="figures"/>
   </section>
 </template>
 
 <script>
 import BackgroundFigures from "@/components/BackgroundFigures.vue";
+
 export default {
-  name: "TitleSlide",
+  name: "ContentSlide5",
   components: {BackgroundFigures},
   props: {
-    title: {
-      type: String
-    },
-    color: {
-      type: String,
-      default: "cyan"
-    },
-    number: {
+    heading: {
       type: String
     }
   },
