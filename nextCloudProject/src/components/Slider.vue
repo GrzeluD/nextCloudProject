@@ -5,7 +5,7 @@
     </section>
     <div class="navigation fixed bottom-2 left-1/2 -translate-x-1/2">
       <button @click="prevSlide" class="py-0.5 px-1.5 bg-cyan rounded-sm">&lt</button>
-      <span class="px-2 py-0.5 bg-cyan rounded-sm inline-block w-10 mx-2 text-center">{{ index }}/{{ slides.length }}</span>
+      <span class="px-2 py-0.5 bg-cyan rounded-sm inline-block w-14 mx-2 text-center">{{ index }}/{{ slides.length }}</span>
       <button @click="nextSlide" class="py-0.5 px-1.5 bg-cyan rounded-sm">	&gt</button>
     </div>
   </div>

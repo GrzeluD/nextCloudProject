@@ -7,7 +7,8 @@
     <ListSlide @slide="getSlide" heading="Installation" :list="installationList" />
     <TitleSlide @slide="getSlide" title="Hardware" number="01" color="cyan" />
     <NextStepsSlide @slide="getSlide" :stepsList="hardwareList" />
-    <PhotoSlide @slide="getSlide" heading="Our solution" photoDetails="ourSolution" />
+    <PhotoSlide @slide="getSlide" heading="Our solution" photoDetails="ourSolution" />\
+    <ListSlide2 @slide="getSlide" heading="Base system" :list="secondList" />
     <NextStepsSlide @slide="getSlide" :stepsList="nextSteps" headingFirst="Next steps" headingSecond="for safety" />
   </Slider>
 </template>
@@ -15,6 +16,7 @@
 <script>
 import IntroductionSlide from "@/components/Slides/IntroductionSlide.vue";
 import ListSlide from "@/components/Slides/ListSlide.vue";
+import ListSlide2 from "@/components/Slides/ListSlide2.vue";
 import LineSlide from "@/components/Slides/LineSlide.vue";
 import NextStepsSlide from "@/components/Slides/NextStepsSlide.vue";
 import PhotoSlide from "@/components/Slides/PhotoSlide.vue";
@@ -26,6 +28,7 @@ export default {
   components: {
     LineSlide,
     ListSlide,
+    ListSlide2,
     IntroductionSlide,
     NextStepsSlide,
     PhotoSlide,
@@ -164,6 +167,17 @@ export default {
           icon: "Home",
           color: "orange"
         }
+      ],
+      secondList: [
+          "Operating system: Debian 12 Bookworm (testing)",
+          "Database: MariaDB 15.1",
+          "Web server: Apache2 2.4",
+          "Antivirus: ClamAV",
+          "PHP Runtime: PHP 8.2",
+          "PHP modules: ctype, curl, dom, fileinfo, filter, GD, hash, JSON, libxml, mbstring, openssl, posix, session, SimpleXML, XMLReader, XMLWriter, zip, zlib, pdo_sqlite, pdo_mysql, pdo_pgsql",
+          "PHP modules require for additional apps and plugins: bz2, intl, smbclient, ftp, imap, bcmath, gmp, exif, apcu, memcached, redis, imagick, ffmpeg, LibreOffice, phar",
+          "node.JS 18.16",
+          "Firewall: ufw 0.36 + iptables 1.8"
       ]
     }
   },
