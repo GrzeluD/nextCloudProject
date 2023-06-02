@@ -8,8 +8,8 @@
             <h3 v-if="item.title" class="text-xl mb-4 font-[Sharetech]">{{ item.title }}</h3>
             <p v-if="item.description" v-html="item.description" class="w-[300px]"></p>
           </div>
-          <div class="icon w-16 h-16 relative" :class="`bg-${item.color}`">
-            <component class="fill-white w-10 h-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" :is="`${item.icon}Icon`" />
+          <div class="icon w-16 h-16 relative">
+            <component class="fill-white w-10 h-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" :is="item.icon + 'Icon'" />
           </div>
         </div>
       </div>
@@ -152,6 +152,21 @@ export default {
 
 .listItem:nth-child(odd) {
   justify-content: space-between;
+}
+
+.listItem:nth-of-type(1) .icon,
+.listItem:nth-of-type(4) .icon{
+  background: #00cfcc;
+}
+
+.listItem:nth-of-type(2) .icon,
+.listItem:nth-of-type(5) .icon{
+  background: #e898ac;
+}
+
+.listItem:nth-of-type(3) .icon,
+.listItem:nth-of-type(6) .icon{
+  background: #ff9973;
 }
 
 </style>

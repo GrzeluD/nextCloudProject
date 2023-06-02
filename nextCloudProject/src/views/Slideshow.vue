@@ -15,7 +15,7 @@
 <script>
 import IntroductionSlide from "@/components/Slides/IntroductionSlide.vue";
 import ListSlide from "@/components/Slides/ListSlide.vue";
-import LineSlide from "@/components/LineSlide.vue";
+import LineSlide from "@/components/Slides/LineSlide.vue";
 import NextStepsSlide from "@/components/Slides/NextStepsSlide.vue";
 import PhotoSlide from "@/components/Slides/PhotoSlide.vue";
 import Slider from "@/components/Slider.vue";
