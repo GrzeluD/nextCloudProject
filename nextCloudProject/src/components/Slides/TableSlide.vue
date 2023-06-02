@@ -1,14 +1,31 @@
 <template>
-  <section ref="slide" class="slide relative shrink-0 h-full basis-[100vw] items-center flex">
-    <div class="container w-[840px] mx-auto">
-      <h2 class="text-3xl font-[Sharetech] uppercase mb-8">{{ heading }}</h2>
-      <ul class="columns-2 mb-4">
-        <li class="list text-l pl-3 mb-2 relative before:absolute before:w-[4px] before:h-[4px] before:rounded-full before:bg-cyan before:left-0 before:top-[10px]" v-for="item in list">
-          {{ item }}
-        </li>
-      </ul>
-
-      <span class="font-[Sharetech] text-cyan italic underline" v-html="anchor"></span>
+  <section ref="slide" class="slide flex items-center shrink-0 h-full basis-[100vw] relative">
+    <div class="container w-[840px] mx-auto relative">
+        <h2 class="text-3xl font-[Sharetech] uppercase">{{ heading }}</h2>
+        <div>
+          <div class="row flex mb-3">
+            <div class="col basis-1/2"></div>
+            <div class="col basis-1/2 font-[Sharetech]">Tailored for:</div>
+          </div>
+          <div class="mt-4 p-4 border-solid border-2 border-pink rounded-xl">
+            <div class="row flex mb-3 items-center">
+              <div class="col basis-1/2 font-[Sharetech]">All-in-One docker image</div>
+              <div class="col basis-1/2">Container without Virtual Machine, but also Virtual server in clouds (AWS, Azure and other)</div>
+            </div>
+            <div class="row flex mb-3 items-center">
+              <div class="col basis-1/2 font-[Sharetech]">All-in-One VM image</div>
+              <div class="col basis-1/2">Virtual Machines on home PC or as Virtual Server in cloud services</div>
+            </div>
+            <div class="row flex mb-3 items-center">
+              <div class="col basis-1/2 font-[Sharetech]">NextcloudPi image</div>
+              <div class="col basis-1/2">Raspberry PI comlete operating system with Nextcloud solution deployed and ready to run. Also for Odroid and rock64 uPC’s.</div>
+            </div>
+            <div class="row flex mb-3 items-center">
+              <div class="col basis-1/2 font-[Sharetech]">zip/tar Archive (our choice)</div>
+              <div class="col basis-1/2">Most challenging, but also most robust package which can be deployed on anything meeting minimum hardware requirements</div>
+            </div>
+          </div>
+        </div>
     </div>
     <BackgroundFigures :figures="figures" />
   </section>
@@ -17,16 +34,10 @@
 <script>
 import BackgroundFigures from "@/components/BackgroundFigures.vue";
 export default {
-  name: "ListSlide2",
+  name: "TableSlide",
   components: {BackgroundFigures},
   props: {
-    list: {
-      type: Array
-    },
     heading: {
-      type: String
-    },
-    anchor: {
       type: String
     }
   },

@@ -7,8 +7,9 @@
     <ListSlide @slide="getSlide" heading="Installation" :list="installationList" />
     <TitleSlide @slide="getSlide" title="Hardware" number="01" color="cyan" />
     <NextStepsSlide @slide="getSlide" :stepsList="hardwareList" />
-    <PhotoSlide @slide="getSlide" heading="Our solution" photoDetails="ourSolution" />\
-    <ListSlide2 @slide="getSlide" heading="Base system" :list="secondList" />
+    <PhotoSlide @slide="getSlide" heading="Our solution" photoDetails="ourSolution" />
+    <ListSlide2 @slide="getSlide" heading="Base system" :list="secondList" :anchor="secondListAnchor" />
+    <TableSlide @slide="getSlide" heading="Download Server" />
     <NextStepsSlide @slide="getSlide" :stepsList="nextSteps" headingFirst="Next steps" headingSecond="for safety" />
   </Slider>
 </template>
@@ -21,11 +22,13 @@ import LineSlide from "@/components/Slides/LineSlide.vue";
 import NextStepsSlide from "@/components/Slides/NextStepsSlide.vue";
 import PhotoSlide from "@/components/Slides/PhotoSlide.vue";
 import Slider from "@/components/Slider.vue";
+import TableSlide from "@/components/Slides/TableSlide.vue";
 import TitleSlide from "@/components/Slides/TitleSlide.vue";
 import WelcomeSlide from "@/components/Slides/WelcomeSlide.vue";
 export default {
   name: "Slideshow",
   components: {
+    TableSlide,
     LineSlide,
     ListSlide,
     ListSlide2,
@@ -68,13 +71,13 @@ export default {
         },
         {
           title: "Pick Solution",
-          description: "Visit <a href='https://nextcloud.com/install/#instructions-server'>here</a> and download version which best suit your hardware choice",
+          description: "Visit <a class='underline italic text-cyan' href='https://nextcloud.com/install/#instructions-server'>here</a> and download version which best suit your hardware choice",
           color: "pink",
           icon: "Hand"
         },
         {
           title: "Install Dependencies",
-          description: "Read manual on <a href='https://docs.nextcloud.com/server/latest/admin_manual/'>here</a> which guides you step-by-step thru installation process",
+          description: "Read manual on <a class='underline italic text-cyan' href='https://docs.nextcloud.com/server/latest/admin_manual/'>here</a> which guides you step-by-step thru installation process",
           color: "orange",
           icon: "Terminal"
         },
@@ -178,7 +181,8 @@ export default {
           "PHP modules require for additional apps and plugins: bz2, intl, smbclient, ftp, imap, bcmath, gmp, exif, apcu, memcached, redis, imagick, ffmpeg, LibreOffice, phar",
           "node.JS 18.16",
           "Firewall: ufw 0.36 + iptables 1.8"
-      ]
+      ],
+      secondListAnchor: "<a href='https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html'>Minimum requirements</a>"
     }
   },
   methods: {
