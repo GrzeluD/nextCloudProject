@@ -7,7 +7,8 @@
           <div class="icon w-[100px] h-[90px] relative mb-4 before:block before:absolute before:left-[-8px] before:w-[8px] before:top-[40px] before:h-[80px] before:border before:border-[#ffffff90] before:border-r-0">
             <component :is="item.icon + 'Icon'" color="white" class="fill-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
           </div>
-          <h3 :class="`before:content-['0${index + 1}']`" class="pl-1 before:block before:mb-2 before:text-3xl before:text-cyan text-xl font-[Sharetech] uppercase">{{ item.title }}</h3>
+          <span class="font-[Sharetech] block mb-2 text-3xl text-cyan">0{{ index + 1 }}</span>
+          <h3 class="pl-1 text-xl font-[Sharetech] uppercase">{{ item.title }}</h3>
           <h4 class="pl-1">{{ item.content }}</h4>
         </li>
       </ul>
