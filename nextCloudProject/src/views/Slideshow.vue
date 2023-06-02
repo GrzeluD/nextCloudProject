@@ -61,19 +61,19 @@ export default {
           firstName: "Grzegorz",
           lastName: "Dziedzic",
           description: "Front-end Developer, Creator of this page",
-          img: "img"
+          img: "grzela.jpg"
         },
         {
           firstName: "Paweł",
           lastName: "Mielimonka",
           description: "Linux Administrator, Owner of Kartofel",
-          img: "img"
+          img: "pablo.jpg"
         },
         {
           firstName: "Albert",
           lastName: "Pasek",
           description: "Businessman and Junk researcher",
-          img: "img"
+          img: "albi.jpg"
         }
       ],
       slides: [],
