@@ -1,16 +1,17 @@
 <template>
   <section ref="slide" class="slide relative shrink-0 h-full basis-[100vw] items-center flex">
     <div class="container w-[840px] mx-auto">
-      <h2 class="text-3xl font-[Sharetech] uppercase mb-8">{{ headingFirst }} <span class="text-cyan">{{ headingSecond }}</span></h2>
-      <ul class="flex justify-between">
-        <li class="block w-[230px]" v-for="item in stepsList">
-          <div :class="'bg-' + item.color" class="w-[100px] h-[90px] relative mb-4 before:block before:absolute before:left-[-8px] before:w-[8px] before:top-[40px] before:h-[80px] before:border before:border-[#ffffff90] before:border-r-0">
-            <component :is="item.icon + 'Icon'" color="white" class="fill-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-          </div>
-          <h3 class="pl-1 before:block before:mb-2 before:text-3xl before:text-cyan before:content-['01'] text-xl font-[Sharetech] uppercase">{{ item.title }}</h3>
-          <h4 class="pl-1">{{ item.content }}</h4>
-        </li>
-      </ul>
+      <h2 class="text-3xl font-[Sharetech] uppercase mb-8">{{ heading }}</h2>
+      <div class="flex items-center justify-between">
+        <ul class="w-[260px]">
+          <p class="text-xl mb-4 font-[Sharetech]">After testing on Raspberry PI I decided to buy (used) Mini PC Fujitsu Q920</p>
+          <li class="pl-3 mb-2 relative before:absolute before:w-[3px] before:h-[3px] before:rounded-full before:bg-cyan before:left-0 before:top-1/2 before:-translate-y-1/2">CPU Intel i5-4590T</li>
+          <li class="pl-3 mb-2 relative before:absolute before:w-[3px] before:h-[3px] before:rounded-full before:bg-cyan before:left-0 before:top-1/2 before:-translate-y-1/2">RAM 8GB DDR3</li>
+          <li class="pl-3 mb-2 relative before:absolute before:w-[3px] before:h-[3px] before:rounded-full before:bg-cyan before:left-0 before:top-1/2 before:-translate-y-1/2">SSD 256GB</li>
+          <li class="pl-3 mb-2 relative before:absolute before:w-[3px] before:h-[3px] before:rounded-full before:bg-cyan before:left-0 before:top-1/2 before:-translate-y-1/2">Max power consumption: 65W</li>
+        </ul>
+        <img class="w-[460px] rounded-xl border-4 border-pink border-solid" :src="`${path}/images/Foto0.jpeg`">
+      </div>
     </div>
     <BackgroundFigures :figures="figures" />
   </section>
@@ -18,28 +19,20 @@
 
 <script>
 import BackgroundFigures from "@/components/BackgroundFigures.vue";
-import FirewallIcon from "@/components/icons/FirewallIcon.vue";
-import Fail2BanIcon from "@/components/icons/Fail2BanIcon.vue";
-import HomeIcon from "@/components/icons/HomeIcon.vue";
-import SslIcon from "@/components/icons/SslIcon.vue";
-import RaspberryIcon from "@/components/icons/RaspberryIcon.vue";
-import WorldIcon from "@/components/icons/WorldIcon.vue";
 export default {
-  name: "NextStepsSlide",
-  components: {BackgroundFigures, Fail2BanIcon, FirewallIcon, HomeIcon, SslIcon, RaspberryIcon, WorldIcon},
+  name: "PhotoSlide",
+  components: {BackgroundFigures},
   props: {
-    stepsList: {
-      type: Array
-    },
-    headingFirst: {
+    heading: {
       type: String
     },
-    headingSecond: {
-      type: String
+    photoDetails: {
+      type: Object
     }
   },
   data() {
     return {
+      path: import.meta.env.PROD ? '/project' : '',
       figures: [
         {
           type: 'emptySquare',

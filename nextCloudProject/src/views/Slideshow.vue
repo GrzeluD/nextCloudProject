@@ -6,7 +6,9 @@
     <ListSlide @slide="getSlide" :list="featureList" heading="Features" />
     <ListSlide @slide="getSlide" heading="Installation" :list="installationList" />
     <TitleSlide @slide="getSlide" title="Hardware" number="01" color="cyan" />
-    <NextStepsSlide @slide="getSlide" />
+    <NextStepsSlide @slide="getSlide" :stepsList="hardwareList" />
+    <PhotoSlide @slide="getSlide" heading="Our solution" photoDetails="ourSolution" />
+    <NextStepsSlide @slide="getSlide" :stepsList="nextSteps" headingFirst="Next steps" headingSecond="for safety" />
   </Slider>
 </template>
 
@@ -15,6 +17,7 @@ import IntroductionSlide from "@/components/Slides/IntroductionSlide.vue";
 import ListSlide from "@/components/Slides/ListSlide.vue";
 import LineSlide from "@/components/LineSlide.vue";
 import NextStepsSlide from "@/components/Slides/NextStepsSlide.vue";
+import PhotoSlide from "@/components/Slides/PhotoSlide.vue";
 import Slider from "@/components/Slider.vue";
 import TitleSlide from "@/components/Slides/TitleSlide.vue";
 import WelcomeSlide from "@/components/Slides/WelcomeSlide.vue";
@@ -24,8 +27,9 @@ export default {
     LineSlide,
     ListSlide,
     IntroductionSlide,
-    Slider,
     NextStepsSlide,
+    PhotoSlide,
+    Slider,
     TitleSlide,
     WelcomeSlide
   },
@@ -119,6 +123,46 @@ export default {
         },
         {
           name: "Why shoudl we use our own cloud?"
+        }
+      ],
+      nextSteps: [
+        {
+          title: "Firewall",
+          content: "Allow you to configure network traffic filtering rules and server protection",
+          icon: "Firewall",
+          color: "cyan"
+        },
+        {
+          title: "Fail2Ban",
+          content: "Monitors system logs and blocks IP addresses of attackers",
+          icon: "Fail2Ban",
+          color: "pink"
+        },
+        {
+          title: "SSL/TLS",
+          content: "Cryptographic protocols used to secure internet communications",
+          icon: "Ssl",
+          color: "orange"
+        }
+      ],
+      hardwareList: [
+        {
+          title: "Raspberry PI",
+          content: "Some more advanced applications and plugins may hit badly the performance, but basic functionality works undisrupted",
+          icon: "Raspberry",
+          color: "cyan"
+        },
+        {
+          title: "Virtual server on home PC",
+          content: "Runs smooth but uses PC’s resources (and power) 24h/day",
+          icon: "World",
+          color: "pink"
+        },
+        {
+          title: "Dedicated home server",
+          content: "Even the cheapest guarantee sufficient resources to run clod with multiple apps and plugins, and there’s still some for another webpages and services",
+          icon: "Home",
+          color: "orange"
         }
       ]
     }

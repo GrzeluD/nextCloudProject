@@ -1,11 +1,11 @@
 <template>
   <section ref="slide" class="slide flex items-center shrink-0 h-full basis-[100vw] relative">
-    <div :class="`before:bg-${color}`" class="container w-[640px] mx-auto h-[160px] relative
+    <div :class="'before:bg-' + color" class="container w-[640px] mx-auto h-[160px] relative
                 after:content-[''] after:bottom-0 after:left-0 after:right-0 after:absolute after:h-[12px] after:rounded-xl after:bg-white
                 before:content-[''] before:bottom-0 before:left-0 before:right-[20%] before:absolute before:h-[12px] before:rounded-xl before:z-10">
       <div class="flex justify-around items-center">
         <h2 class="text-3xl font-[Sharetech] uppercase">{{ title }}</h2>
-        <div :class="`bg-${color} before:bg-${color}`" class="w-16 h-16 relative before:w-[1px] before:left-1/2 before:-translate-x-1/2 before:h-[90px] before:absolute before:-bottom-[90px]"><span class="text-3xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">{{ number }}</span></div>
+        <div class="w-16 h-16 relative before:w-[1px] before:left-1/2 before:-translate-x-1/2 before:h-[90px] before:absolute before:-bottom-[90px] bg-cyan before:bg-cyan"><span class="text-3xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">{{ number }}</span></div>
       </div>
     </div>
     <BackgroundFigures :figures="figures" />
@@ -22,7 +22,8 @@ export default {
       type: String
     },
     color: {
-      type: String
+      type: String,
+      default: "cyan"
     },
     number: {
       type: String
