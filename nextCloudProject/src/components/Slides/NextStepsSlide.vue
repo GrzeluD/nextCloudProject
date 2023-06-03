@@ -10,6 +10,7 @@
           <span class="font-[Sharetech] block mb-2 text-3xl text-cyan">0{{ index + 1 }}</span>
           <h3 class="pl-1 text-xl font-[Sharetech] uppercase">{{ item.title }}</h3>
           <h4 class="pl-1">{{ item.content }}</h4>
+          <p :class="`text-${item.color}`" class="pl-1 font-[Sharetech] mt-1" v-if="item.difficulty">Difficulty: {{ item.difficulty }}</p>
         </li>
       </ul>
     </div>
@@ -19,15 +20,20 @@
 
 <script>
 import BackgroundFigures from "@/components/BackgroundFigures.vue";
+import CloudIcon from "@/components/icons/CloudIcon.vue";
+import EnvelopeIcon from "@/components/icons/EnvelopeIcon.vue";
 import FirewallIcon from "@/components/icons/FirewallIcon.vue";
 import Fail2BanIcon from "@/components/icons/Fail2BanIcon.vue";
+import FileIcon from "@/components/icons/FileIcon.vue";
+import HardwareIcon from "@/components/icons/HardwareIcon.vue";
 import HomeIcon from "@/components/icons/HomeIcon.vue";
 import SslIcon from "@/components/icons/SslIcon.vue";
 import RaspberryIcon from "@/components/icons/RaspberryIcon.vue";
+import TerminalIcon from "@/components/icons/TerminalIcon.vue";
 import WorldIcon from "@/components/icons/WorldIcon.vue";
 export default {
   name: "NextStepsSlide",
-  components: {BackgroundFigures, Fail2BanIcon, FirewallIcon, HomeIcon, SslIcon, RaspberryIcon, WorldIcon},
+  components: {BackgroundFigures, CloudIcon, EnvelopeIcon, Fail2BanIcon, FileIcon, FirewallIcon, HardwareIcon, HomeIcon, SslIcon, RaspberryIcon, TerminalIcon, WorldIcon},
   props: {
     stepsList: {
       type: Array

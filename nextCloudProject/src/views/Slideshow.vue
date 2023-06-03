@@ -15,6 +15,8 @@
     <ContentSlide3 @slide="getSlide" heading="Deployment" />
     <PhotoSlide2 @slide="getSlide" heading="Configure webserver" />
     <ContentSlide4 @slide="getSlide" heading="Configure NextCloud" />
+    <NextStepsSlide @slide="getSlide" :stepsList="addons" />
+    <NextStepsSlide @slide="getSlide" :stepsList="addons2" />
     <NextStepsSlide @slide="getSlide" :stepsList="nextSteps" headingFirst="Next steps" headingSecond="for safety" />
     <ContentSlide5 @slide="getSlide" heading="Costs and efforts" />
     <TitleSlide @slide="getSlide" title="Summary" number="END" color="cyan" />
@@ -201,7 +203,53 @@ export default {
           "node.JS 18.16",
           "Firewall: ufw 0.36 + iptables 1.8"
       ],
-      secondListAnchor: "<a href='https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html'>Minimum requirements</a>"
+      secondListAnchor: "<a href='https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html'>Minimum requirements</a>",
+      addons: [
+        {
+          title: "SSH Access",
+          content: "For supporters and admins",
+          icon: "Terminal",
+          color: "cyan",
+          difficulty: "10%"
+        },
+        {
+          title: "DNS Server",
+          content: "Blocks all ads and many other unwanted connections",
+          icon: "Hardware",
+          color: "pink",
+          difficulty: "40%"
+        },
+        {
+          title: "Another webpage",
+          content: "For everyone who shouldn’t have access to our cloud or unrelated projects.",
+          icon: "World",
+          color: "orange",
+          difficulty: "50%"
+        }
+      ],
+      addons2: [
+        {
+          title: "Nextcloud Plugins and modules",
+          content: "From themes and beautifiers thru complex videoconference app with whiteboard\n",
+          icon: "Cloud",
+          color: "cyan",
+          difficulty: "60%"
+        },
+        {
+          title: "Samba",
+          content: "Simple network storage which lets per-machine configuration.",
+          icon: "File",
+          color: "pink",
+          difficulty: "30%"
+        },
+        {
+          title: "Mail Server",
+          content: "Last step for safety – build your own mail server and say bye! to all privacy violating providers.",
+          icon: "Envelope",
+          color: "orange",
+          difficulty: "100%"
+        }
+      ]
     }
   },
   methods: {
